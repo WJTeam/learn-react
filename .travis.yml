@@ -1,0 +1,31 @@
+language: node_js
+node_js: stable
+
+# Travis-CI Caching
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm instal
+
+script:
+  - npm run build
+
+after_script:
+  - cd public
+  - git init
+  - git config user.name "forecho"
+  - git config user.email "caizhenghai@gmail.com"
+  - git add .
+  - git commit -m "Auto deploy from Travis-CI."
+  - git push --force --quiet "https://$GH_Token@github.com/$GH_REPO.git" master:gh-pages
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+    - GH_REPO: 3li3/react
+    - secure: "xxxxx="
