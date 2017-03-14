@@ -11,12 +11,13 @@ script:
   - npm run build
 
 after_script:
-  - npm run deploy
-
-before_script:
+  - cd build
+  - git init
   - git config --global user.name "forecho"
   - git config --global user.email "caizhenghai@gmail.com"
-  - sed -i "s/http:\/\/3li3.github.io\/react/https:\/\/${GH_Token}@github.com\/${GH_REPO}.git/g" package.json
+  - git add .
+  - git commit -m "Auto deploy from Travis-CI."
+  - git push --force --quiet "https://$GH_Token@github.com/$GH_REPO.git" master:gh-pages
 
 env:
   global:
