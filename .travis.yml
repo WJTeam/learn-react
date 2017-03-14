@@ -6,24 +6,17 @@ cache:
   directories:
     - node_modules
 
-install:
-  - npm instal
-
 script:
+  - npm instal
   - npm run build
 
 after_script:
-  - cd public
-  - git init
-  - git config user.name "forecho"
-  - git config user.email "caizhenghai@gmail.com"
-  - git add .
-  - git commit -m "Auto deploy from Travis-CI."
-  - git push --force --quiet "https://$GH_Token@github.com/$GH_REPO.git" master:gh-pages
+  - npm run deploy
 
-branches:
-  only:
-    - master
+before_script:
+  - git config --global user.name "forecho"
+  - git config --global user.email "caizhenghai@gmail.com"
+  - export REPO_URL="https://$GH_TOKEN@github.com/$GH_REPO.git"
 
 env:
   global:
