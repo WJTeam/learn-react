@@ -16,7 +16,7 @@ const {Button} = WeUI;
 class App extends Component {
     render() {
         return (
-            <Button>hello wechat</Button>
+            <Button>hello world</Button>
         );
     }
 }
