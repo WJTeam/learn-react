@@ -16,8 +16,7 @@ after_script:
 before_script:
   - git config --global user.name "forecho"
   - git config --global user.email "caizhenghai@gmail.com"
-  - export REPO_URL="https://$GH_TOKEN@github.com/$GH_REPO.git"
-  - sed -i "s/http:\/\/3li3.github.io\/react/$REPO_URL/g" package.json
+  - sed -i "s/http:\/\/3li3.github.io\/react/https:\/\/$GH_TOKEN@github.com\/$GH_REPO.git/g" package.json
 
 env:
   global:
