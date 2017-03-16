@@ -6,10 +6,15 @@ import {Home} from "./components/Home";
 
 class App extends Component {
     render() {
+        let user = {
+            name: "forecho"
+        };
         return (
             <div className="container">
                 <Header/>
-                <Home/>
+                <Home user={user} name={"echo"}>
+                    <span>我今年18岁了</span>
+                </Home>
             </div>
         );
     }
