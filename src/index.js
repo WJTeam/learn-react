@@ -1,27 +1,21 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, {Component} from "react";
+import ReactDOM from "react-dom";
 
-//使用 commonJS 模块方式 *可能需要webpack插件
-//import { Button } from 'react-weui'
-
-//使用 ES6 方式引入
-import WeUI from 'react-weui';
-
-//引入样式库
-import 'weui';
-import 'react-weui/lib/react-weui.min.css';
-
-const {Button} = WeUI;
+import {Header} from "./components/Header";
+import {Home} from "./components/Home";
 
 class App extends Component {
     render() {
         return (
-            <Button>hello world</Button>
+            <div className="container">
+                <Header/>
+                <Home/>
+            </div>
         );
     }
 }
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('container')
+    <App />,
+    document.getElementById("container")
 );
