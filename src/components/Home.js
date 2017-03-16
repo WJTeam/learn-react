@@ -12,3 +12,10 @@ export class Home extends React.Component {
     }
 
 }
+
+// 规范参数类型
+Home.propTypes = {
+    name: React.PropTypes.string,
+    user: React.PropTypes.object,
+    children: React.PropTypes.element.isRequired // React 元素 且必须
+};
