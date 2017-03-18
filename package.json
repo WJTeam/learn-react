@@ -1,13 +1,11 @@
 {
-  "name": "3li3-reactjs",
+  "name": "wjteam-learn-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://3li3.github.io/react",
+  "homepage": "https://wjteam.github.io/learn-react",
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-weui": "^1.0.3",
-    "weui": "^1.1.0"
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0",
