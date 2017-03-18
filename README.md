@@ -2,6 +2,8 @@
 
 在线访问地址 https://wjtearm.github.io/learn-react/
 
+[![Build Status](https://travis-ci.org/WJTeam/learn-react.svg?branch=master)](https://travis-ci.org/WJTeam/learn-react)
+
 ## 学习步骤
 
 - [廖雪峰的 JavaScript 教程](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000)
