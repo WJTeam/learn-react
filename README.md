@@ -1,6 +1,6 @@
 # 从零开始学习 Javascript 到使用 ReactJs
 
-在线访问地址 https://wjtearm.github.io/learn-react/
+在线访问地址 https://wjteam.github.io/learn-react/
 
 [![Build Status](https://travis-ci.org/WJTeam/learn-react.svg?branch=master)](https://travis-ci.org/WJTeam/learn-react)
 
