@@ -11,7 +11,7 @@ class App extends Component {
         };
         return (
             <div className="container">
-                <Header/>
+                <Header homeLink="首页"/>
                 <Home user={user} name={"echo"} initialAge={18}>
                     <span>我今年18岁了</span>
                 </Home>
