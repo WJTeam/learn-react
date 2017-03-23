@@ -4,7 +4,8 @@ export class Home extends React.Component {
     constructor(props) {
         super();
         this.state = {
-            age: props.initialAge
+            age: props.initialAge,
+            homeLink: "开始"
         };
     }
 
@@ -12,6 +13,11 @@ export class Home extends React.Component {
         this.setState({
             age: this.state.age + 3
         });
+    }
+
+
+    onChangeLink() {
+        this.props.changeLink(this.state.homeLink)
     }
 
     render() {
@@ -25,6 +31,8 @@ export class Home extends React.Component {
                 <button onClick={this.onMakeMe.bind(this)} className="btn">点我试试看2</button>
                 <hr/>
                 <button onClick={this.props.hello} className="btn">打招呼</button>
+                <hr/>
+                <button onClick={this.onChangeLink.bind(this)} className="btn">点我改变菜单</button>
             </div>
         );
     }
