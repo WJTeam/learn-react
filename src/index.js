@@ -5,6 +5,10 @@ import {Header} from "./components/Header";
 import {Home} from "./components/Home";
 
 class App extends Component {
+    onSayHello() {
+        alert("hello");
+    };
+
     render() {
         let user = {
             name: "forecho"
@@ -12,7 +16,7 @@ class App extends Component {
         return (
             <div className="container">
                 <Header homeLink="首页"/>
-                <Home user={user} name={"echo"} initialAge={18}>
+                <Home user={user} name={"echo"} initialAge={18} hello={this.onSayHello}>
                     <span>我今年18岁了</span>
                 </Home>
             </div>
