@@ -3,12 +3,15 @@ import React from "react";
 export class Home extends React.Component {
     constructor(props) {
         super();
-        this.age = props.age;
+        this.state = {
+            age: props.initialAge
+        };
     }
 
     onMakeMe() {
-        console.log(this.age);
-        this.age += 3;
+        this.setState({
+            age: this.state.age + 3
+        });
     }
 
     render() {
@@ -16,7 +19,7 @@ export class Home extends React.Component {
             <div>
                 <p> In a new Component!</p>
                 <p>我的名字叫 {this.props.user.name}，{this.props.children}</p>
-                <p>你的名字叫 {this.props.name}，今年{this.age}岁了</p>
+                <p>你的名字叫 {this.props.name}，今年{this.state.age}岁了</p>
                 <button onClick={() => this.onMakeMe()} className="btn">点我试试看1</button>
                 <button onClick={this.onMakeMe.bind(this)} className="btn">点我试试看2</button>
             </div>

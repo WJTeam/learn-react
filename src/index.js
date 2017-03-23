@@ -12,7 +12,7 @@ class App extends Component {
         return (
             <div className="container">
                 <Header/>
-                <Home user={user} name={"echo"} age={18}>
+                <Home user={user} name={"echo"} initialAge={18}>
                     <span>我今年18岁了</span>
                 </Home>
             </div>
