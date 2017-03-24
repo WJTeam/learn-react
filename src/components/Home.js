@@ -5,7 +5,7 @@ export class Home extends React.Component {
         super();
         this.state = {
             age: props.initialAge,
-            homeLink: "开始"
+            homeLink: props.initialLinkName
         };
     }
 
@@ -20,6 +20,12 @@ export class Home extends React.Component {
         this.props.changeLink(this.state.homeLink)
     }
 
+    onHandleChangeLink(event) {
+        this.setState({
+            homeLink: event.target.value
+        });
+    }
+
     render() {
         return (
             <div>
@@ -32,6 +38,7 @@ export class Home extends React.Component {
                 <hr/>
                 <button onClick={this.props.hello} className="btn">打招呼</button>
                 <hr/>
+                <input type="text" value={this.state.homeLink} onChange={this.onHandleChangeLink.bind(this)}/>
                 <button onClick={this.onChangeLink.bind(this)} className="btn">点我改变菜单</button>
             </div>
         );

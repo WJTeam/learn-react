@@ -29,7 +29,12 @@ class App extends Component {
         return (
             <div className="container">
                 <Header homeLink={this.state.homeLink}/>
-                <Home user={user} name={"echo"} initialAge={18} hello={this.onSayHello} changeLink={this.onChangeLinkName.bind(this)}>
+                <Home user={user}
+                      name={"echo"}
+                      initialAge={18}
+                      hello={this.onSayHello}
+                      initialLinkName={this.state.homeLink}
+                      changeLink={this.onChangeLinkName.bind(this)}>
                     <span>我今年18岁了</span>
                 </Home>
             </div>
