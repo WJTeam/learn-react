@@ -15,6 +15,35 @@ export class Home extends React.Component {
         });
     }
 
+    componentWillMount() {
+        console.log("组件将挂载");
+    }
+
+    componentDidMount() {
+        console.log("组件已经挂载");
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log("组件将要接受参数", nextProps);
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log("组件应该更新吗？", nextProps, nextState);
+        return true;
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        console.log("组件将要更新", nextProps, nextState);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log("组件已经更新", prevProps, prevState);
+
+    }
+
+    componentWillUnmount() {
+        console.log("组件将要取消挂载");
+    }
 
     onChangeLink() {
         this.props.changeLink(this.state.homeLink)

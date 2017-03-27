@@ -8,7 +8,8 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            homeLink: "首页"
+            homeLink: "首页",
+            homeMounted: true
         };
     }
 
@@ -22,13 +23,20 @@ class App extends Component {
         });
     }
 
+    onChangeHomeMounted() {
+        this.setState({
+            homeMounted: !this.state.homeMounted
+        });
+    }
+
     render() {
         let user = {
             name: "forecho"
         };
-        return (
-            <div className="container">
-                <Header homeLink={this.state.homeLink}/>
+
+        let homeComponent = "";
+        if (this.state.homeMounted) {
+            homeComponent = (
                 <Home user={user}
                       name={"echo"}
                       initialAge={18}
@@ -37,6 +45,16 @@ class App extends Component {
                       changeLink={this.onChangeLinkName.bind(this)}>
                     <span>我今年18岁了</span>
                 </Home>
+            );
+        }
+        return (
+            <div className="container">
+                <Header homeLink={this.state.homeLink}/>
+
+                {homeComponent}
+
+                <button onClick={this.onChangeHomeMounted.bind(this)} className="btn">点我显示隐藏</button>
+
             </div>
         );
     }
